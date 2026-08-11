@@ -14,6 +14,10 @@ public class App {
                                 109.3f, 13, 0, 1);
         l[5] = new Lutador("Nerdaart", "EUA", 30, 1.81f,
                                 105.7f, 12, 0, 1);
-        l[0].apresentar();
+        Luta ufc01 = new Luta();
+        ufc01.marcarLuta(l[0], l[1]);
+        ufc01.lutar();
+        l[0].status();
+        l[1].status();
     }
 }

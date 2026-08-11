@@ -1,5 +1,3 @@
-import org.w3c.dom.ls.LSOutput;
-
 public class Lutador {
     //atributos
     private String nome, nacionalidade, categoria;
