@@ -1,4 +1,4 @@
-public class Livro implements ControladorLivro{
+public class Livro implements ControladorLivro {
     private String titulo;
     private Pessoa leitor;
     private Pessoa autor;
@@ -14,6 +14,7 @@ public class Livro implements ControladorLivro{
         setAberto(false);
 
     }
+
     public Pessoa getAutor() {
         return autor;
     }
@@ -62,7 +63,7 @@ public class Livro implements ControladorLivro{
         this.aberto = aberto;
     }
 
-    public void detalhes(){
+    public void detalhes() {
         System.out.println("Titulo: " + getTitulo());
         autor.apresentar();
         System.out.println("Total: " + getTotalPaginas());
@@ -74,7 +75,7 @@ public class Livro implements ControladorLivro{
     public void abrir() {
         if (isAberto()) {
             System.out.println("Livro já esta aberto!");
-        }else{
+        } else {
             System.out.println("Livro aberto!");
             setAberto(true);
         }
@@ -82,12 +83,12 @@ public class Livro implements ControladorLivro{
 
     @Override
     public void fechar() {
-    if (!isAberto()) {
-        System.out.println("Livro já esta fechado");
-    }else{
-        System.out.println("Livro fechado!");
-        setAberto(false);
-    }
+        if (!isAberto()) {
+            System.out.println("Livro já esta fechado");
+        } else {
+            System.out.println("Livro fechado!");
+            setAberto(false);
+        }
     }
 
     @Override
@@ -98,9 +99,9 @@ public class Livro implements ControladorLivro{
                 System.out.print(getPagAtual() + " ");
                 setPagAtual(getPagAtual() + 1);
             }
-        }else if (!isAberto()){
+        } else if (!isAberto()) {
             System.out.println("Livro fechado!\nNão tem como folhear");
-        }else if(condicao == 0){
+        } else if (condicao == 0) {
             System.out.println("Não tem como folhear!\nLivro esta na ultima pagina!");
         }
     }
@@ -126,13 +127,13 @@ public class Livro implements ControladorLivro{
     @Override
     public void abrirPag1() {
         if (isAberto()) {
-        if (getPagAtual() == 1) {
-            System.out.println("Já está na primeira página");
-        }else {
-            System.out.println("Folheando até a primeira pagina");
-            setPagAtual(1);
-        }
-        }else{
+            if (getPagAtual() == 1) {
+                System.out.println("Já está na primeira página");
+            } else {
+                System.out.println("Folheando até a primeira pagina");
+                setPagAtual(1);
+            }
+        } else {
             setAberto(true);
             setPagAtual(1);
             System.out.println("Livro aberto na primeira página");
